@@ -10,7 +10,7 @@ module.exports = class extends Generator {
 
     writing() {
         const { module, mainClass, group } = this.options;
-        this.fs.copyTpl(this.templatePath("Main.kt"), this.destinationPath(`${module}/src/main/kotlin/${group}/${mainClass}.kt`), this.options);
+        this.fs.copyTpl(this.templatePath("Main.kt"), this.destinationPath(`${module}/src/main/kotlin/${group.replace(/\./g, "/")}/${mainClass}.kt`), this.options);
         this.fs.copyTpl(this.templatePath("application.yml"), this.destinationPath(`${module}/src/main/resources/application.yml`));
         this.fs.copyTpl(this.templatePath("spring-configuration-metadata-whitelist.properties"), this.destinationPath(`${module}/src/main/resources/META-INF/spring-configuration-metadata-whitelist.properties`))
     }

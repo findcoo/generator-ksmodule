@@ -1,3 +1,8 @@
+### Install
+```bash
+npm install -g generator-ksmodule
+```
+
 ### How to use
 
 ```bash
